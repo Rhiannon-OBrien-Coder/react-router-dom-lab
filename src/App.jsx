@@ -22,7 +22,7 @@ const App = () => {
       <Route path="/mailboxes" element={<MailboxList mailboxes={mailboxes} />} />
       <Route path="/new-mailbox" element={<MailboxForm mailboxes={mailboxes} addMailbox={addMailbox} />} />
       <Route path="/mailboxes/:mailboxId" element={<MailboxDetails mailboxes={mailboxes} />} />
-      <Route path="*" element={<h2>404 Error: Page not found</h2>} />
+      <Route path="*" element={<h2>404 Error: Mailbox not found!</h2>} />
     </Routes> 
   </>
   )
