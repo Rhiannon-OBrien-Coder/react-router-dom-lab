@@ -5,8 +5,11 @@ const MailboxDetails = (props) => {
     const thisMailbox = props.mailboxes.find((mail) => mail._id === Number(mailboxId))
     console.log('Mailbox Object:', thisMailbox)
 
-    return (
-        <>
+    if (!thisMailbox) {
+      return <h2>404 Error: Mailbox not found!</h2>
+    } 
+      return (
+        <div>
           <h2>Mailbox {thisMailbox._id}</h2>
           <dl>
             <dt>Box Size:</dt>
@@ -14,8 +17,8 @@ const MailboxDetails = (props) => {
             <dt>Owner:</dt>
             <dd>{thisMailbox.boxholder}</dd>
           </dl>
-        </>
-      );
-  };
+        </div>
+      )
+    }
   
   export default MailboxDetails
